@@ -18,7 +18,7 @@ int main()
 	if (strcmp("y", charget) == 0)
 	{
 		printf("输入成功,十秒后关机\n");
-		system("shutdown -s -t 360");
+		system("shutdown -s -t 10");
 		goto errorto;
 	}
 
