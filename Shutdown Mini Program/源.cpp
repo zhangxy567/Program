@@ -12,13 +12,13 @@ int main()
 { 
 	char charget[20] = { 0 };
 	printf("******************是否关机?**************** \n");
-	printf("***输入y:10s后关机   ****   输入n:取消关机***\n");
+	printf("***输入y:一分钟后关机   ****   输入n:取消关机***\n");
 	errorto:
 	scanf("%s", charget);
 	if (strcmp("y", charget) == 0)
 	{
-		printf("输入成功,十秒后关机\n");
-		system("shutdown -s -t 10");
+		printf("输入成功,一分钟后关机\n");
+		system("shutdown -s -t 60");
 		goto errorto;
 	}
 
