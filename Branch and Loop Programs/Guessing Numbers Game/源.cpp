@@ -33,8 +33,9 @@ using namespace std;
 //			比如想生成100-200的值,则可以%101+100 (运算法则及左值先运算为0,取使之成立的值为n,此时再将n作用于右值,使之为m(0),则m=m(0)+1)
 //			公式化即为需要a-b范围的数,公式化即为  a+num%(b-a+1)
 // 		
-int main()
-{
+
+//int main()
+//{
 	//srand(1);
 	//printf("%d\n", rand());
 	//printf("%d\n", rand());
@@ -57,6 +58,84 @@ int main()
 	//printf("%d\n", rand());
 	//printf("%d\n", rand());
 	//printf("%d\n", rand());
+//
+//	return 0;
+//}
+
+
+void game()
+{
+	system("cls");
+	printf("*******  猜数字游戏  ********\n");
+	printf("请输入0-100之间的数->\n");
+		int rannum = rand() % (100) + 1;
+		int guess = 0;
+		int count = 7;
+	while (count)
+	{
+		printf("还有%d机会\n", count);
+		printf("请输入0-100之间的数->\n\n");
+		scanf("%d", &guess);
+		if (guess > rannum)
+			printf("猜大了\n");
+		else if (guess < rannum)
+			printf("猜小了\n");
+		else 
+		{
+			printf("猜对了\n");
+			break;
+		}
+		count--;
+	}
+	if (count == 0)
+	{
+		printf("很遗憾,没能在规定次数内猜对\n");
+	}
+}
+void menu()
+{
+	printf("************************\n");
+	printf("*****  猜数字游戏  ******\n");
+	printf("******* 1. play ********\n");
+	printf("******* 0. exit ********\n");
+	printf("************************\n");
+	printf("请选择:>");
+}
+int main()
+{
+	int input = 0;
+	srand((unsigned int)time(NULL) );
+	do
+	{
+		menu();
+		scanf("%d", &input);
+		switch (input)
+		{
+			case 1:
+			{
+			game();
+			break;
+			}
+
+			case 0:
+			{
+				system("cls");
+				printf("游戏已退出");
+				break;
+			}
+		
+			default:
+			{
+				printf("输入错误,请重新输入");
+				input = 1;
+				break;
+			}
+
+		}
+	} while (input);
+
+
+
 
 	return 0;
 }
